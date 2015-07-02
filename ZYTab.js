@@ -36,10 +36,6 @@
                     this.defTab = k;
                 }
 
-                if (this.lastTab === '') {
-                    this.lastTab = k;
-                }
-
                 this.tabs[k] = $el;
                 this.bodies[k] = $(s);
             }
@@ -72,13 +68,25 @@
         },
 
         setTab: function(curTab, lastTab) {
-            this.tabs[lastTab].removeClass(this.activeClass);
-            this.tabs[curTab].addClass(this.activeClass);
+            lastTab = this.tabs[lastTab];
+            curTab = this.tabs[curTab];
+            if (lastTab) {
+                lastTab.removeClass(this.activeClass);
+            }
+            if (curTab) {
+                curTab.addClass(this.activeClass);
+            }
         },
 
         setBody: function(curTab, lastTab) {
-            this.bodies[lastTab].hide();
-            this.bodies[curTab].show();
+            lastTab = this.tabs[lastTab];
+            curTab = this.tabs[curTab];
+            if (lastTab) {
+                lastTab.hide();    
+            }
+            if (curTab) {
+                curTab.show();    
+            }
         }
     };
 
