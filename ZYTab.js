@@ -79,8 +79,8 @@
         },
 
         setBody: function(curTab, lastTab) {
-            lastTab = this.tabs[lastTab];
-            curTab = this.tabs[curTab];
+            lastTab = this.bodies[lastTab];
+            curTab = this.bodies[curTab];
             if (lastTab) {
                 lastTab.hide();    
             }
