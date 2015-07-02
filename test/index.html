@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ZYTab testing</title>
+	<style type="text/css">
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;	
+		}
+
+		.wrapper {
+			width: 408px;
+			margin: 0 auto;
+			border: 1px solid #333;
+		}
+
+		.content {
+			padding: 10px;
+		}
+
+		.c {
+			display: none;
+		}
+
+		.c1 {
+			background-color: rgb(0, 167, 255);
+		}
+
+		.c2 {
+			background-color: rgb(109, 228, 29);
+		}
+
+		.c3 {
+			background-color: rgb(255, 0, 77);
+		}
+
+		.c4 {
+			background-color: rgb(194, 50, 224);
+		}
+
+		.show {
+			display: block;
+		}
+
+		.zytab-nav-box {
+			height: 30px;
+		}	
+
+		.zt-nav {
+			float: left;
+			width: 100px;
+			height: 30px;
+			margin: 0 1px;
+			text-align: center;
+			line-height: 30px;
+			background-color: #f5f5f5;
+			cursor: pointer;
+		}
+
+		.zt-active {
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<ul class="zytab-nav-box">
+			<li class="zt-nav zt-active" data-zt=".zt-bd-c1">TAB 1</li>
+			<li class="zt-nav" data-zt=".zt-bd-c2">TAB 2</li>
+			<li class="zt-nav" data-zt=".zt-bd-c3">TAB 3</li>
+			<li class="zt-nav" data-zt=".zt-bd-c4">TAB 4</li>
+		</ul>
+		<div class="content">
+			<div class="c c1 show zt-bd-c1">Content 1</div>
+			<div class="c c2 zt-bd-c2">Content 2</div>
+			<div class="c c3 zt-bd-c3">Content 3</div>
+			<div class="c c4 zt-bd-c4">Content 4</div>
+		</div>
+	</div>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="../ZYTab.js"></script>
+<script type="text/javascript">
+	var ins = new ZYTab({
+		selector: '.zt-nav',
+		event: 'mouseover',
+		defTab: '.zt-bd-c2'
+	});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
