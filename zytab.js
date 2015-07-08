@@ -1,4 +1,4 @@
-(function(global, factory) {
+;(function(global, factory) {
     if (typeof module !== 'undefined' && module.exports !== undefined) {
         var $ = require('jquery');
         module.exports = factory($);
