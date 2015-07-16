@@ -46,8 +46,10 @@
             {context: this}, 
             this.handler
         );
-
-        this.whenChange(this.defTab);
+        
+        if (this.defTab !== false) {
+            this.whenChange(this.defTab);
+        }
     }
 
     ZYTab.prototype = {

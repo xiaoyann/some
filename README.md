@@ -36,3 +36,5 @@ new ZYTab({
 });
 
 ```
+
+>- 设置`defTab:false`来阻止设置默认tab
