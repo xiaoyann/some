@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.slider-container {
+			height: 150px;
+			margin: 50px;
+		}
+		button {
+			float: left;
+			width: 20px;
+			height: 150px;
+		}
+		.slider-box {
+			float: left;
+			position: relative;
+			width: 170px;
+			height: 150px;
+			padding: 0 10px;
+			overflow: hidden;
+		}
+		.slider-main {
+			position: absolute;
+			left: 0;
+			float: left;
+			height: 150px;
+		}
+		.slider-main li {
+			float: left;
+			width: 150px;
+			height: 150px;
+			margin-left: 20px;
+			text-align: center;
+			line-height: 150px;
+			font-size: 20px;
+			color: #fff;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="slider-container">
+		<button id="slider-ctrlPrev"></button>
+		<div class="slider-box">
+			<ul class="slider-main">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+			</ul>
+		</div>
+		<button id="slider-ctrlNext"></button>
+	</div>
+
+<script src="/statics/javascripts/jquery/jquery-1.11.2.js"></script>
+<script src="slide.js"></script>
+<script>
+	SimpleSlide({
+		// 滑动器 
+		sliderElem: '.slider-main',
+		// 每次滑动的宽度
+		unitSliding: '170',
+		// 显示多少张
+		showSlide: '1',
+		
+		// 上一个按钮 可选
+		ctrlPrev: '#slider-ctrlPrev',
+		// 下一个按钮 可选
+		ctrlNext: '#slider-ctrlNext',
+		// 是否自动滑动 可选
+		autoSliding: true,
+		// 自动滑动的速度 可选
+		autoSlidingSpeed: 1000,
+		// 滑动速度 可选
+		iSpeed: 500
+	})
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

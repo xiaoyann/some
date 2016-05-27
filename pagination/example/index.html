@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .pagination a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            border: 1px solid blue;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .pagination .current {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pagination" id="js-pagination">
+            
+    </div>
+
+<script src="../pagination.js"></script>
+<script>
+    function paging(element, options) {
+        var data = pagination(options), html = [], page;
+
+        for (var i = 0, l = data.pages.length; i < l; i++) {
+            page = data.pages[i];
+            if (page === data.currentPage) {
+                html.push('<a class="current" href="#page='+ page +'">'+ page +'</a>');
+            } else {
+                html.push('<a href="#page='+ page +'">'+ page +'</a>');
+            }
+        }
+
+        html.unshift('<a href="#page='+ data.prevPage +'"><</a>');
+        html.push('<a href="#page='+ data.nextPage +'">></a>');
+        
+        element.innerHTML = html.join('');
+    }
+
+    paging(document.getElementById('js-pagination'), {
+        // 总条数
+        totalRecords: 100,
+        // 当前页
+        currentPage: 7,
+        // 每页多少条
+        pageLength: 10,
+        // 显示多少个页码
+        pageSize: 5
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
